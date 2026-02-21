@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaybia Kitchen - Teman Ngopi Paling Pas Rasa Berkelas</title>
+    <style>
+        /* --- CSS DASAR (Sama untuk kedua halaman) --- */
+        :root {
+            --primary-color: #5D4037; /* Cokelat Tua */
+            --secondary-color: #D7CCC8; /* Cokelat Muda */
+            --accent-color: #FFECB3; /* Emas/Kuning Muda */
+            --text-color: #333;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Navigasi */
+        nav {
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            margin-left: 20px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .btn-order {
+            background-color: var(--primary-color);
+            color: var(--white) !important;
+            padding: 8px 20px;
+            border-radius: 20px;
+        }
+
+        /* Hero Section */
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: var(--white);
+        }
+
+        header h1 {
+            font-size: 36px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        /* SLIDER (Geser Geser) */
+        .slider-container {
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+            height: 500px; /* Tinggi slider dibuat чуть lebih besar agar foto tidak kepotong */
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide {
+            display: none;
+            height: 100%;
+            width: 100%;
+        }
+
+        /* Pengaturan foto agar tidak terpotong (contain) */
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Mengubah dari cover menjadi contain agar foto penuh dan tidak terpotong */
+            background-color: #eee;
+        }
+
+        /* Tombol Prev/Next */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 10;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: var(--primary-color);
+        }
+
+        /* Story Section */
+        .story-section {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .story-section h2 {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        .footer-contact {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigasi -->
+    <nav>
+        <div class="logo" >Kaybia Kitchen </div>
+        <div class="nav-links">
+            <a href="index.html">Beranda</a>
+            <a href="menu.html">Menu & Harga</a>
+            <a href="#story">Tentang Kami</a>
+            <a href="https://wa.me/6281707000050" class="btn-order">Pesan Sekarang</a>
+        </div>
+    </nav>
+
+    <!-- SLIDER 2 FOTO -->
+    <!-- Atribut width="50%" dan height="auto" dihapus agar foto penuh & tidak gepeng -->
+    <div class="slider-container">
+        <div class="slide fade">
+            <img src="bunk.jpeg" alt="Brownies Lezat">
+        </div>
+        
+        <div class="slide fade">
+            <img src="bunj.jpeg" alt="Kue Bolu">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+<!-- Header / Slogan -->
+    <header>
+        <h1>Teman Ngopi Paling Pas, Rasa Berkelas</h1>
+    </header>
+    <!-- Story Section -->
+    <div class="story-section" id="story">
+        <h2>Mengenal Kaybia Kitchen</h2>
+        <p>Kehangatan Rasa dari Dapur Bunda Kaybia</p>
+        <p style="text-align: justify; margin-top: 20px;">
+            Seit tahun 2019, Kaybia Kitchen hadir untuk menemani momen manis dan spesial Anda. Berawal dari kecintaan bunda Yuli Kusuma dalam menyajikan hidangan terbaik untuk keluarga, hobi ini tumbuh menjadi sebuah dedikasi untuk menghadirkan camilan berkualitas bagi masyarakat luas.
+        </p>
+        <p><strong>Kenapa "Kaybia"?</strong><br>
+        Nama adalah doa. Kaybia merupakan gabungan nama dari kedua buah hati tercinta, Kayla dan Tabia. Semangat kasih sayang seorang bunda inilah yang menjadi bahan dasar utama dalam setiap loyang brownies, setiap iris bolu marmer, dan setiap butir pempek yang kami produksi.
+        </p>
+        <p>
+            Kami memahami bahwa rasa tidak pernah berbohong. Itulah mengapa sejak hari pertama di tahun 2019 hingga saat ini, Kaybia Kitchen tetap mempertahankan resep autentik dan bahan-bahan pilihan. Mulai dari Brownies berbagai ukuran yang fudgy dengan shinycrust yang cantik, Bolu Marmer yang klasik dan lembut, hingga Pempek Frozen yang praktis namun tetap segar—semuanya dibuat dengan standar kebersihan dan rasa yang selalu terjaga, karena kami freshly made by order.
+        </p>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Kaybia Kitchen. All Rights Reserved.</p>
+        <!-- Nomor HP ditambahkan di footer -->
+        <div class="footer-contact">
+            Hubungi kami: 0817-07000-050
+        </div>
+    </footer>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex-1].style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
+

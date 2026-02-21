@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu & Harga - Kaybia Kitchen</title>
+    <style>
+        /* --- CSS DASAR --- */
+        :root {
+            --primary-color: #5D4037;
+            --secondary-color: #D7CCC8;
+            --accent-color: #FFECB3;
+            --text-color: #333;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #FAFAFA;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* --- NAVIGASI --- */
+        nav {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #8D6E63;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .btn-order {
+            background-color: var(--primary-color);
+            color: var(--white) !important;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+        }
+
+        .btn-order:hover {
+            background-color: #4E342E;
+            transform: scale(1.05);
+        }
+
+        /* --- HEADER MENU --- */
+        .menu-header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background-color: var(--white);
+            margin-bottom: 40px;
+        }
+
+        .menu-header h1 {
+            font-size: 42px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .menu-header p {
+            font-size: 18px;
+            color: #888;
+        }
+
+        .divider {
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 20px auto;
+        }
+
+        /* --- GRID PRODUK --- */
+        .product-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto 60px auto;
+            padding: 0 30px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .product-img-container {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-img {
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .product-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .product-desc {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 15px;
+        }
+
+        .product-price {
+            font-size: 26px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .product-price span {
+            font-size: 16px;
+            font-weight: 400;
+            color: #888;
+        }
+
+        .btn-beli {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-decoration: none;
+            padding: 12px 35px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-beli:hover {
+            background-color: var(--white);
+            color: var(--primary-color);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .footer-text {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: var(--white);
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 20px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--white);
+            color: var(--primary-color);
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .menu-header h1 {
+                font-size: 32px;
+            }
+            
+            .product-container {
+                padding: 0 20px;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigasi -->
+    <nav>
+        <div class="logo">Kaybia<span>Kitchen</span></div>
+        <div class="nav-links">
+            <a href="index.html">Beranda</a>
+            <a href="menu.html">Menu & Harga</a>
+            <a href="index.html#story">Tentang Kami</a>
+            <a href="https://wa.me/6281234567890" class="btn-order">Pesan Sekarang</a>
+        </div>
+    </nav>
+
+    <!-- Header Menu -->
+    <div class="menu-header">
+        <h1>Menu & Harga</h1>
+        <p>Pilihan lezat untuk menemani hari Anda</p>
+        <div class="divider"></div>
+    </div>
+
+    <!-- Daftar Produk -->
+    <div class="product-container">
+         <!-- Produk 1: Brownies 2x2 -->
+        <div class="product-card">
+            <div class="product-badge">Terlaris</div>
+            <div class="product-img-container">
+                <!-- Ganti URL di bawah dengan foto Brownies 5x2 asli Anda -->
+                <img src="https://via.placeholder.com/400x300/5D4037/FFFFFF?text=Brownies+2x2" alt="Brownies 5x2" class="product-img">
+            </div>
+            <div class="product-info">
+                <h3 class="product-name">Brownies 2x2</h3>
+                <p class="product-desc">Bisa request topping, Ukuran pas untuk personal, tekstur fudgy yang lembut.</p>
+                <p class="product-price">Rp 37.000 <span>/ potong</span></p>
+                <a href="https://wa.me/6281234567890?text=Halo+Kaybia+Kitchen,+saya+mau+pesan+Brownies+5x2" class="btn-beli">Pesan Sekarang</a>
+            </div>
+        </div>
+
+        <!-- Produk 1: Brownies 5x2 -->
+        <div class="product-card">
+            <div class="product-badge">Terlaris</div>
+            <div class="product-img-container">
+                <!-- Ganti URL di bawah dengan foto Brownies 5x2 asli Anda -->
+                <img src="https://via.placeholder.com/400x300/5D4037/FFFFFF?text=Brownies+5x2" alt="Brownies 5x2" class="product-img">
+            </div>
+            <div class="product-info">
+                <h3 class="product-name">Brownies 5x2</h3>
+                <p class="product-desc">Bisa request topping, Ukuran pas untuk 1-2 orang, tekstur fudgy yang lembut.</p>
+                <p class="product-price">Rp 37.000 <span>/ potong</span></p>
+                <a href="https://wa.me/6281234567890?text=Halo+Kaybia+Kitchen,+saya+mau+pesan+Brownies+5x2" class="btn-beli">Pesan Sekarang</a>
+            </div>
+        </div>
+
+        <!-- Produk 2: Brownies 20x20 -->
+        <div class="product-card">
+            <div class="product-img-container">
+                <!-- Ganti URL di bawah dengan foto Brownies 20x20 asli Anda -->
+                <img src="https://via.placeholder.com/400x300/6D4C41/FFFFFF?text=Brownies+20x20" alt="Brownies 20x20" class="product-img">
+            </div>
+            <div class="product-info">
+                <h3 class="product-name">Brownies 20x20</h3>
+                <p class="product-desc">Bisa request topping, Ukuran besar, cocok untuk keluarga</p>
+                <p class="product-price">Rp 95.000 <span>/ loyang</span></p>
+                <a href="https://wa.me/6281234567890?text=Halo+Kaybia+Kitchen,+saya+mau+pesan+Brownies+20x20" class="btn-beli">Pesan Sekarang</a>
+            </div>
+        </div>
+
+        <!-- Produk 3: Brownies Jumbo -->
+        <div class="product-card">
+            <div class="product-badge">Best Seller</div>
+            <div class="product-img-container">
+                <!-- Ganti URL di bawah dengan foto Brownies Jumbo asli Anda -->
+                <img src="https://via.placeholder.com/400x300/795548/FFFFFF?text=Brownies+Jumbo" alt="Brownies Jumbo" class="product-img">
+            </div>
+            <div class="product-info">
+                <h3 class="product-name">Brownies Jumbo</h3>
+                <p class="product-desc">Bisa request topping, Super besar, cocok untuk acara spesial</p>
+                <p class="product-price">Rp 125.000 <span>/ loyang</span></p>
+                <a href="https://wa.me/6281234567890?text=Halo+Kaybia+Kitchen,+saya+mau+pesan+Brownies+Jumbo" class="btn-beli">Pesan Sekarang</a>
+            </div>
+        </div>
+
+        <!-- Produk 4: Bolu Marmer -->
+        <div class="product-card">
+            <div class="product-img-container">
+                <!-- Ganti URL di bawah dengan foto Bolu Marmer asli Anda -->
+                <img src="https://via.placeholder.com/400x300/8D6E63/FFFFFF?text=Bolu+Marmer" alt="Bolu Marmer" class="product-img">
+            </div>
+            <div class="product-info">
+                <h3 class="product-name">Bolu Marmer</h3>
+                <p class="product-desc">Bolu dengan Perpaduan cokelat dan vanila, lembut dan harum butter</p>
+                <p class="product-price">Rp 50.000 <span>/ loyang</span></p>
+                <a href="https://wa.me/6281234567890?text=Halo+Kaybia+Kitchen,+saya+mau+pesan+Bolu+Marmer" class="btn-beli">Pesan Sekarang</a>
+            </div>
+        </div>
+
+        <!-- Produk 5: Pempek Frozen -->
+                <div class="product-card">
+            <div class="product-img-container">
+                <!-- Ganti URL di bawah dengan foto Bolu Marmer asli Anda -->
+                <img src="https://via.placeholder.com/400x300/8D6E63/FFFFFF?text=Bolu+Marmer" alt="Bolu Marmer" class="product-img">
+            </div>
+            <div class="product-info">
+                <h3 class="product-name">Pempek Frozen</h3>
+                <p class="product-desc">Pempek frozen asli Palembang</p>
+                <p class="product-price">Rp 27.000 <span>/ pak</span></p>
+                <a href="https://wa.me/6281234567890?text=Halo+Kaybia+Kitchen,+saya+mau+pesan+Bolu+Marmer" class="btn-beli">Pesan Sekarang</a>
+            </div>
+        </div>
+        
