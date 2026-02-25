@@ -14,15 +14,36 @@
             --white: #ffffff;
         }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: var(--text-color);
-            line-height: 1.6;
-        }
+       body {
+    /* Font dasar: Playfair Display (Elegan) */
+    font-family: 'Playfair Display', Georgia, serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: var(--text-color);
+    line-height: 1.6;
+}
 
+/* GAYA 1: Mewah & Tegas (Sangat cocok untuk Judul Utama) */
+.font-mewah {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* GAYA 2: Modern & Bersih (Cocok untuk penjelasan/body text agar tidak pusing) */
+.font-modern {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    text-transform: none;
+}
+
+/* GAYA 3: Estetik & Tulis Tangan (Cocok untuk Slogan atau Nama Owner) */
+.font-estetik {
+    font-family: 'Sacramento', cursive;
+    font-size: 1.5rem; /* Gaya tulis tangan biasanya harus lebih besar agar terbaca */
+    color: var(--primary-color);
+}
         /* Navigasi */
         nav {
             background-color: var(--white);
@@ -36,11 +57,25 @@
             z-index: 1000;
         }
 
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
+        /* Bagian Logo */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color);
+    /* Tambahkan ini */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Bagian Link Navigasi */
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    margin-left: 20px;
+    font-weight: 500;
+    transition: 0.3s;
+    /* Tambahkan ini */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
         .nav-links a {
             text-decoration: none;
@@ -170,20 +205,23 @@
 
         /* Story Section */
         .story-section {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 30px;
-            text-align: center;
-            background: var(--white);
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    text-align: center;
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    /* TAMBAHKAN BARIS INI */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-        .story-section h2 {
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-
+/* Agar judul di dalam story section tetap seragam */
+.story-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
         .story-section p {
             margin-bottom: 15px;
         }
@@ -244,28 +282,35 @@
     </header>
     <!-- Story Section -->
     <div class="story-section" id="story">
-        <h2>Mengenal Kaybia Kitchen</h2>
-        <p><strong>Kehangatan Rasa dari Dapur Bundanya Kaybia</strong></p>
-        <p style="text-align: justify; margin-top: 20px;">
-            Sejak tahun 2019, Kaybia Kitchen hadir untuk menemani momen manis dan spesial Anda. Berawal dari kecintaan bunda Yuli Kusuma dalam menyajikan hidangan terbaik untuk keluarga, hobi ini tumbuh menjadi sebuah dedikasi untuk menghadirkan camilan berkualitas bagi masyarakat luas.
-        </p>
-        <p><strong>Kenapa "Kaybia"?</strong><br>
+    <h2>Mengenal Kaybia Kitchen</h2>
+    <p><strong>Kehangatan Rasa dari Dapur Bundanya Kaybia</strong></p>
+    
+    <p style="text-align: justify; margin-top: 20px;">
+        Sejak tahun 2019, Kaybia Kitchen hadir untuk menemani momen manis dan spesial Anda. Berawal dari kecintaan bunda Yuli Kusuma dalam menyajikan hidangan terbaik untuk keluarga, hobi ini tumbuh menjadi sebuah dedikasi untuk menghadirkan camilan berkualitas bagi masyarakat luas.
+    </p>
+    
+    <p><strong>Kenapa "Kaybia"?</strong><br>
         Nama adalah doa. Kaybia merupakan gabungan nama dari kedua buah hati tercinta, Kayla dan Tabia. Semangat kasih sayang seorang bunda inilah yang menjadi bahan dasar utama dalam setiap loyang brownies, setiap iris bolu marmer, dan setiap butir pempek yang kami produksi.
-        </p>
-        <p>
-            Kami memahami bahwa rasa tidak pernah berbohong. Itulah mengapa sejak hari pertama di tahun 2019 hingga saat ini, Kaybia Kitchen tetap mempertahankan resep autentik dan bahan-bahan pilihan. Mulai dari Brownies berbagai ukuran yang fudgy dengan shinycrust yang cantik, Bolu Marmer yang klasik dan lembut, hingga Pempek Frozen yang praktis namun tetap segar—semuanya dibuat dengan standar kebersihan dan rasa yang selalu terjaga, karena kami <em>freshly made by order</em>.
-        </p>
+    </p>
+    
+    <p style="text-align: justify;">
+        Kami memahami bahwa rasa tidak pernah berbohong. Itulah mengapa sejak hari pertama di tahun 2019 hingga saat ini, Kaybia Kitchen tetap mempertahankan resep autentik dan bahan-bahan pilihan. Mulai dari Brownies berbagai ukuran yang fudgy dengan shinycrust yang cantik, Bolu Marmer yang klasik dan lembut, hingga Pempek Frozen yang praktis namun tetap segar—semuanya dibuat dengan standar kebersihan dan rasa yang selalu terjaga, karena kami <em>freshly made by order</em>.
+    </p>
+</div>
+<footer>
+    <p class="font-modern">
+        <strong>Alamat:</strong> Komplek Pondok Bahar, Jalan Garuda II Blok L No. 25, Karang Tengah, Kota Tangerang, Banten. (Delivery & Pickup only)
+    </p>
+
+    <div class="footer-contact font-mewah">
+        Hubungi kami: 0817-07000-050
     </div>
-
-    <footer>
-        <p> Alamat: Komplek Pondok Bahar, Jalan Garuda II Blok L No. 25, Karang Tengah, Kota Tangerang, Banten. (Delivery&Pickup only) </p>
-        <div class="footer-contact">
-            Hubungi kami: 0817-07000-050
-        </div>
-        <p>&copy; 2026 Kaybia Kitchen. All Rights Reserved. Website by Kayla Putri M</p>
-        
-    </footer>
-
+<p>
+    <span class="font-mewah">&copy; 2026 Kaybia Kitchen. All Rights Reserved.</span> 
+    
+    <br> <span class="font-estetik" style="font-size: 1.8rem;">Website by Kayla Putri M</span>
+</p>
+</footer>
     <script>
         let slideIndex = 1;
         showSlides(slideIndex);
